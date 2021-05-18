@@ -65,13 +65,7 @@ static NSMutableDictionary<NSNumber *, id<Detector>> *detectors;
   if (!detector) {
     if ([call.method hasPrefix:@"BarcodeDetector"]) {
       detector = [[BarcodeDetector alloc] initWithOptions:options];
-    } else if ([call.method hasPrefix:@"FaceDetector"]) {
-      detector = [[FaceDetector alloc] initWithOptions:options];
-    } else if ([call.method hasPrefix:@"ImageLabeler"]) {
-      detector = [[ImageLabeler alloc] initWithOptions:options];
-    } else if ([call.method hasPrefix:@"TextRecognizer"]) {
-      detector = [[TextRecognizer alloc] initWithOptions:options];
-    }
+    } 
 
     [FLTGoogleMlVisionPlugin addDetector:handle detector:detector];
   }
